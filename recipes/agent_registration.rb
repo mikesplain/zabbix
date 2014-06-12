@@ -65,6 +65,8 @@ interface_list.each do |interface|
   end
 end
 
+Chef::Log.info("interface_data: #{interface_data}")
+
 zabbix_host node['zabbix']['agent']['hostname'] do
   create_missing_groups true
   server_connection connection_info
