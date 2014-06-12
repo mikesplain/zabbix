@@ -52,6 +52,10 @@ interface_definitions = {
 
 interface_list = node['zabbix']['agent']['interfaces']
 
+Chef::Log.info('***************************************************')
+Chef::Log.info("interface_list:#{node['zabbix']['agent']['interfaces']}")
+Chef::Log.info("interface_definitions:#{interface_definitions}")
+
 interface_data = []
 interface_list.each do |interface|
   if interface_definitions.key?(interface.to_sym)
